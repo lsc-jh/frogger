@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement; // DONT FORGET THIS ONE
 
 public class PlayerController : MonoBehaviour
 {
+
+    public GameObject FinishText;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -32,9 +35,10 @@ public class PlayerController : MonoBehaviour
         SceneManager.LoadScene("SampleScene");
       }
 
-      if(hit.gameObject.name == "Finish") 
+      if(hit.gameObject.name == "Finish")
       {
         hit.gameObject.GetComponent<Renderer>().material.color = Color.red;
+        FinishText.gameObject.SetActive(true); // This
       }
     }
 }
